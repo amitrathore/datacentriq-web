@@ -95,7 +95,7 @@ export function DemoForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <Field label="Name" name="name" required placeholder="Manjul Pathak" />
+          <Field label="Name" name="name" required placeholder="Jane Doe" />
           <Field
             label="Work email"
             name="email"
