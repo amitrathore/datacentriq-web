@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Move beyond dashboards. DatacentrIQ helps enterprises build governed Decision Intelligence Control Towers that explain what changed, reason causally, recommend decisions, track execution, and learn from outcomes.",
-  metadataBase: new URL("https://datacentriq.ai"),
+  metadataBase: new URL("https://datacentriq.co"),
   openGraph: {
     title: "DatacentrIQ — The Enterprise Decision Intelligence Platform",
     description:

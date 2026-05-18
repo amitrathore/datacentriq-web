@@ -24,7 +24,7 @@ const ROLES = [
   "Other",
 ];
 
-const CONTACT_EMAIL = "hello@datacentriq.ai";
+const CONTACT_EMAIL = "hello@datacentriq.co";
 
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
