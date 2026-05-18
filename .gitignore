@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# source materials (sensitive strategy / pricing docs — keep local only)
+/resources/
+/.abacusai/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
