@@ -483,9 +483,9 @@ function LoopSection() {
               system as a learnable signal.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-3 max-w-md">
-              <Stat label="Expected" value="₹74L" tone="ink" />
-              <Stat label="Actual" value="₹61L" tone="good" />
-              <Stat label="Variance" value="−₹13L" tone="warn" />
+              <Stat label="Expected" value="$85K" tone="ink" />
+              <Stat label="Actual" value="$70K" tone="good" />
+              <Stat label="Variance" value="−$15K" tone="warn" />
             </div>
             <p className="mt-4 text-[12.5px] text-ink-mute leading-[1.6] max-w-md">
               <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-accent">
@@ -657,14 +657,14 @@ const TOWERS = [
     domain: "NBFC · BFSI",
     blurb:
       "Prioritize customers, optimize field actions, and learn which interventions drove recovery.",
-    metric: "₹4.62Cr recovered · +8.1%",
+    metric: "$5.4M recovered · +8.1%",
   },
   {
     name: "Revenue Recovery",
     domain: "Retail · Commerce",
     blurb:
       "Recover lost revenue from stockouts, supplier delays, and allocation gaps with simulated interventions.",
-    metric: "₹74L impact · 82% conf.",
+    metric: "$85K impact · 82% conf.",
   },
   {
     name: "Customer 360",

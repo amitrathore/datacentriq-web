@@ -71,7 +71,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
           "Roll-back rate",
           "Promise-to-pay conversion",
           "Promise-to-pay kept rate",
-          "Cost per recovered rupee",
+          "Cost per recovered dollar",
           "Visit completion rate",
           "Visit-to-recovery conversion",
         ],
@@ -142,7 +142,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
           "Promise-to-pay conversion",
           "Route efficiency",
           "Agent capacity utilization",
-          "Cost per recovered rupee",
+          "Cost per recovered dollar",
         ],
         causal: [
           "Does more visit count improve recovery?",
@@ -160,7 +160,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
     pitch:
       "Move from static MIS and collection dashboards to an operational Collections Control Tower. DatacentrIQ connects customers, loans, repayments, field visits, branches, agents, risk segments, and outcomes into a governed ontology — identifying who needs attention, why, what to do, and whether the action worked.",
     outcome: [
-      { label: "Recovered", value: "₹4.62Cr", tone: "good" },
+      { label: "Recovered", value: "$5.4M", tone: "good" },
       { label: "Roll-back", value: "+1.2 pp", tone: "good" },
       { label: "Visits/rep", value: "+18%", tone: "ink" },
     ],
@@ -289,7 +289,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
     pitch:
       "Operate retail through Control Towers that identify revenue leakage, supplier risk, promotion margin loss, and store productivity gaps. DatacentrIQ explains what changed, identifies likely drivers, simulates inventory reallocation or promotion pause, recommends decisions, tracks execution, and measures recovered revenue.",
     outcome: [
-      { label: "Impact", value: "₹74L", tone: "ink" },
+      { label: "Impact", value: "$85K", tone: "ink" },
       { label: "Confidence", value: "82%", tone: "good" },
       { label: "Stores", value: "12", tone: "ink" },
     ],
@@ -400,7 +400,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
     outcome: [
       { label: "Incremental", value: "+22%", tone: "good" },
       { label: "Saturated", value: "3 creators", tone: "ink" },
-      { label: "LTV lift", value: "+₹1,840", tone: "good" },
+      { label: "LTV lift", value: "+$22", tone: "good" },
     ],
   },
   {
@@ -506,7 +506,7 @@ export const VERTICAL_CONTENT: VerticalContent[] = [
       "Operate through Control Towers for distributor performance, inventory allocation, tasting room conversion, wine club retention, and vintage margin. DatacentrIQ connects inventory, sales, distributors, customers, campaigns, and outcomes — recommending better allocation, pricing, promotion, and retention decisions.",
     outcome: [
       { label: "Club retention", value: "+9.4%", tone: "good" },
-      { label: "DTC margin", value: "+₹38/btl", tone: "good" },
+      { label: "DTC margin", value: "+$0.50/btl", tone: "good" },
       { label: "Aging risk", value: "−21%", tone: "good" },
     ],
   },

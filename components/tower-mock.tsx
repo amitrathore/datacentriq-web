@@ -85,7 +85,7 @@ export function TowerMock({ className }: { className?: string }) {
         </div>
         <div className="flex items-center gap-3 shrink-0">
           <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute">
-            Impact ₹74L · 82% conf.
+            Impact $85K · 82% conf.
           </span>
           <span className="rounded-md border border-border-strong px-2.5 py-1 font-mono text-[10px] tracking-[0.18em] uppercase text-ink">
             Approve
@@ -162,7 +162,7 @@ function Chart() {
           </div>
           <div className="mt-1 flex items-baseline gap-2">
             <span className="font-display text-[22px] leading-none tracking-tight text-ink">
-              ₹4.62Cr
+              $5.4M
             </span>
             <span className="text-[11px] font-mono text-good">+8.1%</span>
           </div>
@@ -172,7 +172,7 @@ function Chart() {
             Recovered vs target
           </div>
           <div className="font-mono text-[11px] text-ink-dim">
-            ₹4.62Cr / ₹5.10Cr
+            $5.4M / $6.0M
           </div>
         </div>
       </div>
