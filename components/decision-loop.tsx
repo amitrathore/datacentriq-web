@@ -36,14 +36,14 @@ export function DecisionLoop({ className }: { className?: string }) {
       >
         <defs>
           <radialGradient id="loop-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#4d8bff" stopOpacity="0.35" />
-            <stop offset="60%" stopColor="#4d8bff" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#4d8bff" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--brand)" stopOpacity="0.18" />
+            <stop offset="60%" stopColor="var(--brand)" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="var(--brand)" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="loop-ring" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#7bb0ff" stopOpacity="0.55" />
-            <stop offset="50%" stopColor="#e9b27a" stopOpacity="0.45" />
-            <stop offset="100%" stopColor="#7bb0ff" stopOpacity="0.55" />
+            <stop offset="0%" stopColor="var(--brand)" stopOpacity="0.55" />
+            <stop offset="50%" stopColor="var(--accent-strong)" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="var(--brand)" stopOpacity="0.55" />
           </linearGradient>
         </defs>
 
@@ -63,8 +63,8 @@ export function DecisionLoop({ className }: { className?: string }) {
           style={{ transformOrigin: `${cx}px ${cy}px` }}
         />
 
-        <circle cx={cx} cy={cy} r={r - 32} fill="none" stroke="rgba(255,255,255,0.05)" />
-        <circle cx={cx} cy={cy} r={r - 64} fill="none" stroke="rgba(255,255,255,0.04)" />
+        <circle cx={cx} cy={cy} r={r - 32} fill="none" stroke="rgba(20,23,31,0.06)" />
+        <circle cx={cx} cy={cy} r={r - 64} fill="none" stroke="rgba(20,23,31,0.04)" />
 
         {/* Connector arcs between nodes */}
         {nodes.map((n, i) => {
@@ -79,7 +79,8 @@ export function DecisionLoop({ className }: { className?: string }) {
               key={`arc-${i}`}
               d={`M ${n.x} ${n.y} Q ${cxArc} ${cyArc} ${next.x} ${next.y}`}
               fill="none"
-              stroke="rgba(122,160,255,0.35)"
+              stroke="var(--brand)"
+              strokeOpacity={0.4}
               strokeWidth="1"
               strokeLinecap="round"
               initial={{ pathLength: 0, opacity: 0 }}
@@ -103,11 +104,11 @@ export function DecisionLoop({ className }: { className?: string }) {
               cx={n.x}
               cy={n.y}
               r={9}
-              fill="#0b0f17"
-              stroke="#7bb0ff"
+              fill="var(--bg-card)"
+              stroke="var(--brand)"
               strokeWidth="1.5"
             />
-            <circle cx={n.x} cy={n.y} r={3} fill="#e9b27a" />
+            <circle cx={n.x} cy={n.y} r={3} fill="var(--accent-strong)" />
           </motion.g>
         ))}
 

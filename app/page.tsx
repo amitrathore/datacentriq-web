@@ -103,11 +103,11 @@ function Hero() {
 
           <div className="relative">
             <div
-              className="absolute -inset-12 -z-10 opacity-60"
+              className="absolute -inset-12 -z-10 opacity-70"
               aria-hidden
               style={{
                 background:
-                  "radial-gradient(60% 60% at 50% 50%, rgba(122,160,255,0.15), transparent 70%)",
+                  "radial-gradient(60% 60% at 50% 50%, rgba(37,99,235,0.08), transparent 70%)",
               }}
             />
             <div className="relative">
@@ -972,7 +972,7 @@ function Deployment() {
                 }`}
               >
                 {d.featured && (
-                  <span className="absolute -top-2 left-6 rounded-full bg-brand-deep px-2.5 py-0.5 font-mono text-[9.5px] tracking-[0.2em] uppercase text-ink">
+                  <span className="absolute -top-2 left-6 rounded-full bg-brand-deep px-2.5 py-0.5 font-mono text-[9.5px] tracking-[0.2em] uppercase text-white">
                     Most common
                   </span>
                 )}

@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
 :root {
+  /* Light palette — warm off-white with editorial energy */
+  --bg: #fbfaf7;
+  --bg-elev: #f4f2ed;
+  --bg-card: #ffffff;
+  --surface: #eeece6;
+  --border: #e5e2d8;
+  --border-strong: #cbc7b8;
+  --ink: #14171f;
+  --ink-dim: #4b5364;
+  --ink-mute: #8a8f9c;
+  --brand: #2563eb;
+  --brand-strong: #1d4ed8;
+  --brand-deep: #1e3a8a;
+  --accent: #b8814a;
+  --accent-strong: #965f2c;
+  --good: #15a878;
+  --warn: #c08418;
+  --bad: #d23838;
+}
+
+/* Dark scope — for embedded "product UI" surfaces that should
+   stay dark even on a light marketing page (TowerMock, etc.) */
+[data-theme="dark"] {
   --bg: #06080d;
   --bg-elev: #0b0f17;
   --bg-card: #0e1320;
@@ -57,7 +80,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--brand) 35%, transparent);
+  background: color-mix(in oklab, var(--brand) 22%, transparent);
   color: var(--ink);
 }
 
@@ -71,21 +94,37 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Grid background utility */
+/* Grid background — subtle dark lines on light surfaces */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(20, 23, 31, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 23, 31, 0.045) 1px, transparent 1px);
   background-size: 56px 56px;
   background-position: -1px -1px;
 }
-
-.bg-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
+[data-theme="dark"] .bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
+.bg-dots {
+  background-image: radial-gradient(rgba(20, 23, 31, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+[data-theme="dark"] .bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* Atmospheric halo behind hero — softer on light */
 .radial-glow {
+  background: radial-gradient(
+    60% 50% at 50% 0%,
+    color-mix(in oklab, var(--brand) 9%, transparent),
+    transparent 70%
+  );
+}
+[data-theme="dark"] .radial-glow {
   background: radial-gradient(
     60% 50% at 50% 0%,
     color-mix(in oklab, var(--brand) 18%, transparent),
@@ -93,7 +132,21 @@ body {
   );
 }
 
+/* Editorial gradient text — brand-blue → warm → ink on light */
 .text-gradient-brand {
+  background: linear-gradient(
+    100deg,
+    var(--brand) 0%,
+    var(--accent-strong) 45%,
+    var(--brand-strong) 78%,
+    var(--ink) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="dark"] .text-gradient-brand {
   background: linear-gradient(
     100deg,
     #cfe0ff 0%,
@@ -101,7 +154,6 @@ body {
     #cfe0ff 75%,
     #ffffff 100%
   );
-  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -119,13 +171,28 @@ body {
 
 .ring-inner-soft {
   box-shadow:
+    inset 0 1px 0 rgba(20, 23, 31, 0.03),
+    inset 0 0 0 1px rgba(20, 23, 31, 0.02);
+}
+[data-theme="dark"] .ring-inner-soft {
+  box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
+/* Card elevation — light: very subtle highlight + warm shadow */
 .card-elev {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)) ,
+    linear-gradient(180deg, rgba(20, 23, 31, 0.012), rgba(20, 23, 31, 0)),
+    var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 24px 48px -28px rgba(20, 23, 31, 0.18);
+}
+[data-theme="dark"] .card-elev {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
     var(--bg-card);
   border: 1px solid var(--border);
   box-shadow:
@@ -133,7 +200,19 @@ body {
     0 24px 60px -30px rgba(0, 0, 0, 0.7);
 }
 
+/* Primary CTA — light: solid brand, white text, soft drop */
 .btn-primary {
+  background: var(--brand);
+  color: #ffffff;
+  border: 1px solid color-mix(in oklab, var(--brand) 88%, black);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 22px -14px rgba(37, 99, 235, 0.55);
+}
+.btn-primary:hover {
+  background: var(--brand-strong);
+}
+[data-theme="dark"] .btn-primary {
   background: linear-gradient(180deg, #7bb0ff, #4d8bff);
   color: #07101f;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -141,7 +220,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 8px 24px -12px rgba(77, 139, 255, 0.6);
 }
-.btn-primary:hover {
+[data-theme="dark"] .btn-primary:hover {
   filter: brightness(1.05);
 }
 
@@ -151,11 +230,14 @@ body {
   border: 1px solid var(--border-strong);
 }
 .btn-secondary:hover {
-  border-color: color-mix(in oklab, var(--brand) 50%, var(--border-strong));
+  border-color: color-mix(in oklab, var(--brand) 55%, var(--border-strong));
+  background: rgba(20, 23, 31, 0.03);
+}
+[data-theme="dark"] .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* subtle scanline for "live" feel on tower mockups */
+/* Scanline — only appears inside dark-scoped product mocks */
 .scanline::after {
   content: "";
   position: absolute;

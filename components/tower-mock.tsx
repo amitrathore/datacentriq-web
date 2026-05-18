@@ -6,8 +6,9 @@ import { cn } from "@/lib/utils";
 export function TowerMock({ className }: { className?: string }) {
   return (
     <div
+      data-theme="dark"
       className={cn(
-        "relative card-elev rounded-xl overflow-hidden scanline",
+        "relative card-elev rounded-xl overflow-hidden scanline bg-bg text-ink",
         className
       )}
     >

@@ -244,6 +244,5 @@ function TextArea({
 const inputClass = cn(
   "w-full h-11 rounded-md bg-bg-elev/60 border border-border px-3.5 text-[14px] text-ink",
   "placeholder:text-ink-mute/70 outline-none transition-colors",
-  "focus:border-brand/70 focus:bg-bg-elev/80",
-  "[color-scheme:dark]"
+  "focus:border-brand/70 focus:bg-bg-elev/80"
 );

@@ -225,7 +225,7 @@ function SkuLadder() {
                 }`}
               >
                 {s.featured && (
-                  <span className="absolute -top-2 left-6 rounded-full bg-brand-deep px-2.5 py-0.5 font-mono text-[9.5px] tracking-[0.22em] uppercase text-ink">
+                  <span className="absolute -top-2 left-6 rounded-full bg-brand-deep px-2.5 py-0.5 font-mono text-[9.5px] tracking-[0.22em] uppercase text-white">
                     Most common
                   </span>
                 )}

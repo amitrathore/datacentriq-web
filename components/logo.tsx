@@ -40,8 +40,8 @@ function Mark({ size = 22 }: { size?: number }) {
     >
       <defs>
         <linearGradient id="dciq-g" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#7bb0ff" />
-          <stop offset="1" stopColor="#1f4cb7" />
+          <stop offset="0" stopColor="var(--brand)" />
+          <stop offset="1" stopColor="var(--brand-deep)" />
         </linearGradient>
       </defs>
       <rect x="2" y="2" width="28" height="28" rx="7" stroke="url(#dciq-g)" strokeWidth="1.25" />
@@ -51,7 +51,7 @@ function Mark({ size = 22 }: { size?: number }) {
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      <circle cx="21.5" cy="20.5" r="2.25" fill="#e9b27a" />
+      <circle cx="21.5" cy="20.5" r="2.25" fill="var(--accent-strong)" />
     </svg>
   );
 }
