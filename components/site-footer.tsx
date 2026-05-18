@@ -50,7 +50,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} DatacentrIQ. All rights reserved.
           </p>
           <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-mute">
-            Bring intelligence to the data — not the data to the intelligence.
+            Decision Intelligence for your Human and AI Agents.
           </p>
         </div>
       </div>

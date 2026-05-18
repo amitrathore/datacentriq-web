@@ -346,33 +346,13 @@ function CategoryShift() {
 
 const LAYERS = [
   {
-    name: "Data Connectivity",
-    desc: "Connect enterprise data sources and applications",
-    icon: Database,
+    name: "DecisionOps",
+    desc: "Track actions, ownership, approvals, and outcomes",
+    icon: CheckCircle2,
   },
   {
-    name: "Ontology Core",
-    desc: "Map entities, relationships, hierarchies, and business context",
-    icon: Network,
-  },
-  {
-    name: "MetricIQ",
-    desc: "Govern metrics, formulas, ownership, lineage, and access",
-    icon: GitBranch,
-  },
-  {
-    name: "Contextual Intelligence",
-    desc: "Answer operational questions grounded in business context",
-    icon: Sparkles,
-  },
-  {
-    name: "Movement Explanation",
-    desc: "Explain KPI, segment, region, and portfolio changes",
-    icon: Layers,
-  },
-  {
-    name: "Control Tower Runtime",
-    desc: "Create function-specific enterprise decision cockpits",
+    name: "Enterprise Agents",
+    desc: "Monitor, investigate, recommend, and automate workflows",
     icon: Workflow,
   },
   {
@@ -381,14 +361,34 @@ const LAYERS = [
     icon: GitBranch,
   },
   {
-    name: "Enterprise Agents",
-    desc: "Monitor, investigate, recommend, and automate workflows",
+    name: "Control Tower Runtime",
+    desc: "Create function-specific enterprise decision cockpits",
     icon: Workflow,
   },
   {
-    name: "DecisionOps",
-    desc: "Track actions, ownership, approvals, and outcomes",
-    icon: CheckCircle2,
+    name: "Movement Explanation",
+    desc: "Explain KPI, segment, region, and portfolio changes",
+    icon: Layers,
+  },
+  {
+    name: "Contextual Intelligence",
+    desc: "Answer operational questions grounded in business context",
+    icon: Sparkles,
+  },
+  {
+    name: "MetricIQ",
+    desc: "Govern metrics, formulas, ownership, lineage, and access",
+    icon: GitBranch,
+  },
+  {
+    name: "Ontology Core",
+    desc: "Map entities, relationships, hierarchies, and business context",
+    icon: Network,
+  },
+  {
+    name: "Data Connectivity",
+    desc: "Connect enterprise data sources and applications",
+    icon: Database,
   },
 ] as const;
 
