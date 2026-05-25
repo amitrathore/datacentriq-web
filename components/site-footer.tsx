@@ -25,6 +25,7 @@ export function SiteFooter() {
               <FooterLink href={`${ROUTES.platform}#architecture`}>Architecture</FooterLink>
               <FooterLink href={`${ROUTES.platform}#capabilities`}>Capabilities</FooterLink>
               <FooterLink href={`${ROUTES.platform}#control-towers`}>Control Towers</FooterLink>
+              <FooterLink href={ROUTES.agents}>Enterprise Agents</FooterLink>
               <FooterLink href={`${ROUTES.platform}#governance`}>Governance &amp; Trust</FooterLink>
               <FooterLink href={`${ROUTES.platform}#deployment`}>Deployment</FooterLink>
             </FooterColumn>

@@ -416,11 +416,11 @@ function Architecture() {
         <ol className="mt-14 flex flex-col gap-px bg-border rounded-xl overflow-hidden border border-border">
           {LAYERS.map((layer, i) => {
             const Icon = layer.icon;
-            return (
-              <li
-                key={layer.name}
-                className="group relative bg-bg-card hover:bg-surface/60 transition-colors px-6 sm:px-8 py-5 sm:py-6 grid grid-cols-[44px_minmax(0,1fr)_minmax(0,1.6fr)_auto] items-center gap-5"
-              >
+            const isAgents = layer.name === "Enterprise Agents";
+            const rowClass =
+              "group relative bg-bg-card hover:bg-surface/60 transition-colors px-6 sm:px-8 py-5 sm:py-6 grid grid-cols-[44px_minmax(0,1fr)_minmax(0,1.6fr)_auto] items-center gap-5";
+            const content = (
+              <>
                 <span className="font-mono text-[11px] tabular-nums tracking-[0.2em] uppercase text-ink-mute group-hover:text-accent transition-colors">
                   L{(i + 1).toString().padStart(2, "0")}
                 </span>
@@ -440,6 +440,17 @@ function Architecture() {
                 <span className="text-ink-mute group-hover:text-ink-dim transition-colors">
                   <ArrowUpRight size={16} strokeWidth={1.5} />
                 </span>
+              </>
+            );
+            return isAgents ? (
+              <li key={layer.name}>
+                <Link href={ROUTES.agents} className={rowClass}>
+                  {content}
+                </Link>
+              </li>
+            ) : (
+              <li key={layer.name} className={rowClass}>
+                {content}
               </li>
             );
           })}
@@ -611,36 +622,47 @@ function Capabilities() {
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden border border-border">
-          {CAPABILITIES.map((c) => (
-            <article
-              key={c.name}
-              className="group bg-bg-card hover:bg-surface/60 transition-colors p-6 flex flex-col gap-4 min-h-[260px]"
-            >
-              <div className="flex items-baseline justify-between">
-                <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-mute">
-                  Capability {c.n}
-                </span>
-                <ArrowUpRight
-                  size={14}
-                  className="text-ink-mute group-hover:text-ink transition-colors"
-                />
-              </div>
-              <h3 className="font-display text-[22px] leading-[1.1] tracking-tight text-ink">
-                {c.name}
-              </h3>
-              <p className="text-[13px] leading-[1.6] text-ink-dim">{c.desc}</p>
-              <div className="mt-auto flex flex-wrap gap-1.5">
-                {c.chips.map((chip) => (
-                  <span
-                    key={chip}
-                    className="rounded-md border border-border px-2 py-0.5 font-mono text-[9.5px] tracking-[0.16em] uppercase text-ink-mute"
-                  >
-                    {chip}
+          {CAPABILITIES.map((c) => {
+            const isAgents = c.name === "Enterprise Agents";
+            const cardClass =
+              "group bg-bg-card hover:bg-surface/60 transition-colors p-6 flex flex-col gap-4 min-h-[260px]";
+            const cardContent = (
+              <>
+                <div className="flex items-baseline justify-between">
+                  <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-mute">
+                    Capability {c.n}
                   </span>
-                ))}
-              </div>
-            </article>
-          ))}
+                  <ArrowUpRight
+                    size={14}
+                    className="text-ink-mute group-hover:text-ink transition-colors"
+                  />
+                </div>
+                <h3 className="font-display text-[22px] leading-[1.1] tracking-tight text-ink">
+                  {c.name}
+                </h3>
+                <p className="text-[13px] leading-[1.6] text-ink-dim">{c.desc}</p>
+                <div className="mt-auto flex flex-wrap gap-1.5">
+                  {c.chips.map((chip) => (
+                    <span
+                      key={chip}
+                      className="rounded-md border border-border px-2 py-0.5 font-mono text-[9.5px] tracking-[0.16em] uppercase text-ink-mute"
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </>
+            );
+            return isAgents ? (
+              <Link key={c.name} href={ROUTES.agents} className={cardClass}>
+                {cardContent}
+              </Link>
+            ) : (
+              <article key={c.name} className={cardClass}>
+                {cardContent}
+              </article>
+            );
+          })}
         </div>
       </Container>
     </Section>

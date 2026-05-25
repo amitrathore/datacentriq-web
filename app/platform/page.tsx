@@ -40,6 +40,7 @@ export default function PlatformPage() {
       <Lifecycle />
       <Factories />
       <Modules />
+      <AgentsDetail />
       <DeploymentDetail />
       <Security />
       <FinalCta />
@@ -782,6 +783,112 @@ function Modules() {
 }
 
 /* ------------------------------------------------------------------ */
+/* AGENTS DETAIL                                                       */
+/* ------------------------------------------------------------------ */
+
+const AGENT_HIGHLIGHTS = [
+  {
+    icon: Radar,
+    label: "Monitor",
+    desc: "Watches KPI signal recipes against governed thresholds",
+  },
+  {
+    icon: Target,
+    label: "Recommend",
+    desc: "Drafts decisions citing approved causal claims and policy constraints",
+  },
+  {
+    icon: CheckCircle2,
+    label: "Approve",
+    desc: "Pauses for human HITL approval before any execution step",
+  },
+  {
+    icon: History,
+    label: "Measure",
+    desc: "Tracks outcomes and feeds variance back into agent calibration",
+  },
+];
+
+function AgentsDetail() {
+  return (
+    <Section
+      pageLabel="Enterprise Agents"
+      pageIndex="P/06"
+      className="border-t border-border"
+    >
+      <Container>
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
+          <div className="lg:sticky lg:top-28 self-start">
+            <Eyebrow number="P/06">Enterprise Agents</Eyebrow>
+            <h2 className="mt-6 font-display text-[40px] sm:text-[48px] leading-[1.05] tracking-[-0.02em] text-ink">
+              Contextual actors{" "}
+              <span className="italic text-ink-dim">inside the governed stack.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-[15px] leading-[1.65] text-ink-dim">
+              Agents are not a separate product layer. They operate inside
+              approved Control Towers — bound to signal recipes, decision
+              policies, and causal claims that are already in the artifact
+              registry. They monitor, investigate, recommend, and pause for
+              human approval before executing.
+            </p>
+            <p className="mt-5 max-w-md text-[14px] leading-[1.65] text-ink-dim">
+              The defensibility is not the agents. It&apos;s the governed
+              artifacts they operate against — ontology, metric lineage, causal
+              claims, and decision policies that compound with every approved
+              artifact.
+            </p>
+            <div className="mt-8">
+              <Link
+                href={ROUTES.agents}
+                className="inline-flex items-center gap-2 font-mono text-[11.5px] tracking-[0.18em] uppercase text-accent hover:text-ink transition-colors"
+              >
+                Enterprise Agents deep-dive
+                <ArrowUpRight size={13} strokeWidth={1.75} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-3">
+            {AGENT_HIGHLIGHTS.map((a) => {
+              const Icon = a.icon;
+              return (
+                <div
+                  key={a.label}
+                  className="card-elev rounded-xl p-5 flex flex-col gap-3"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Icon size={14} className="text-brand" strokeWidth={1.5} />
+                    <span className="font-display text-[18px] tracking-tight text-ink">
+                      {a.label}
+                    </span>
+                  </div>
+                  <p className="text-[13px] leading-[1.55] text-ink-dim">
+                    {a.desc}
+                  </p>
+                </div>
+              );
+            })}
+            <div className="sm:col-span-2 card-elev rounded-xl px-5 py-4 flex items-center justify-between gap-4">
+              <p className="text-[13px] leading-[1.55] text-ink-dim">
+                Agent loop, governance anatomy, four archetypes, and three
+                worked examples by vertical.
+              </p>
+              <Link
+                href={ROUTES.agents}
+                className="shrink-0 inline-flex items-center gap-1.5 rounded-lg border border-border-strong px-4 py-2 font-mono text-[11px] tracking-[0.18em] uppercase text-ink hover:bg-surface/60 transition-colors"
+              >
+                Explore agents
+                <ArrowUpRight size={12} strokeWidth={1.75} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* DEPLOYMENT DETAIL                                                   */
 /* ------------------------------------------------------------------ */
 
@@ -818,13 +925,13 @@ function DeploymentDetail() {
     <Section
       id="deployment"
       pageLabel="Deployment"
-      pageIndex="P/06"
+      pageIndex="P/07"
       className="border-t border-border bg-bg-elev/30"
     >
       <Container>
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20">
           <div className="lg:sticky lg:top-28 self-start">
-            <Eyebrow number="P/06">Data access</Eyebrow>
+            <Eyebrow number="P/07">Data access</Eyebrow>
             <h2 className="mt-6 font-display text-[40px] sm:text-[48px] leading-[1.05] tracking-[-0.02em] text-ink">
               Five modes,{" "}
               <span className="italic text-ink-dim">one operating model.</span>
@@ -876,13 +983,13 @@ function Security() {
   return (
     <Section
       pageLabel="Security"
-      pageIndex="P/07"
+      pageIndex="P/08"
       className="border-t border-border"
     >
       <Container>
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
           <div className="lg:sticky lg:top-28 self-start">
-            <Eyebrow number="P/07">Security &amp; governance</Eyebrow>
+            <Eyebrow number="P/08">Security &amp; governance</Eyebrow>
             <h2 className="mt-6 font-display text-[40px] sm:text-[48px] leading-[1.05] tracking-[-0.02em] text-ink">
               Control plane.{" "}
               <span className="italic text-ink-dim">Client data plane.</span>
@@ -1014,7 +1121,7 @@ function FinalCta() {
       />
       <Container className="relative">
         <div className="max-w-3xl">
-          <Eyebrow number="P/08">Engagement</Eyebrow>
+          <Eyebrow number="P/09">Engagement</Eyebrow>
           <h2 className="mt-6 font-display text-[44px] sm:text-[60px] leading-[1.0] tracking-[-0.025em] text-ink">
             See the platform in your{" "}
             <span className="italic text-gradient-brand">own data context.</span>
