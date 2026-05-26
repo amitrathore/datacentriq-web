@@ -8,6 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const ROUTES = {
   home: "/",
   platform: "/platform",
+  agents: "/agents",
   verticals: "/verticals",
   about: "/about",
   demo: "/demo",

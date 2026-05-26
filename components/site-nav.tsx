@@ -10,6 +10,7 @@ import { Menu, X } from "lucide-react";
 
 const NAV = [
   { href: ROUTES.platform, label: "Platform" },
+  { href: ROUTES.agents, label: "Agents" },
   { href: ROUTES.verticals, label: "Verticals" },
   { href: ROUTES.about, label: "About" },
 ];
