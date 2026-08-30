@@ -13,7 +13,7 @@ export function AgentLoopMock({ className }: { className?: string }) {
       )}
     >
       {/* Title bar */}
-      <div className="flex items-center justify-between px-5 py-3.5 border-b border-border bg-bg-elev/60">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 border-b border-border bg-bg-elev/60 sm:px-5">
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-bad/70" />
@@ -21,7 +21,7 @@ export function AgentLoopMock({ className }: { className?: string }) {
             <span className="size-1.5 rounded-full bg-good/70" />
           </span>
           <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-mute">
-            Agent · Collections Recovery
+            Illustrative agent · Collections Recovery
           </span>
         </div>
         <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase text-accent">
@@ -33,7 +33,7 @@ export function AgentLoopMock({ className }: { className?: string }) {
         </span>
       </div>
 
-      <div className="p-5 flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-4 sm:p-5">
         {/* Step 1: Signal */}
         <AgentStep
           stepLabel="01 · Detect"
@@ -104,11 +104,11 @@ export function AgentLoopMock({ className }: { className?: string }) {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-border bg-bg-elev/60 px-5 py-3.5 flex items-center justify-between">
+      <div className="flex flex-col gap-3 border-t border-border bg-bg-elev/60 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
         <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute">
           Agent paused · awaiting human decision
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="rounded-md border border-border px-2.5 py-1 font-mono text-[10px] tracking-[0.18em] uppercase text-ink-mute">
             Reject
           </span>

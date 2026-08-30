@@ -13,6 +13,7 @@ type Props = {
   className?: string;
   arrow?: boolean;
   external?: boolean;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 const sizeMap: Record<Size, string> = {
@@ -28,9 +29,10 @@ export function Button({
   className,
   arrow,
   external,
+  onClick,
 }: Props) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-[transform,background,color,border-color] active:translate-y-px";
+    "focus-ring inline-flex items-center justify-center gap-2 rounded-md font-medium tracking-tight transition-[transform,background,color,border-color] active:translate-y-px";
   const variantClass =
     variant === "primary"
       ? "btn-primary"
@@ -52,6 +54,7 @@ export function Button({
         className={cn(base, sizeMap[size], variantClass, className)}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={onClick}
       >
         {content}
       </a>
@@ -59,7 +62,11 @@ export function Button({
   }
 
   return (
-    <Link href={href} className={cn(base, sizeMap[size], variantClass, className)}>
+    <Link
+      href={href}
+      className={cn(base, sizeMap[size], variantClass, className)}
+      onClick={onClick}
+    >
       {content}
     </Link>
   );

@@ -20,7 +20,7 @@ export function TowerMock({ className }: { className?: string }) {
             <span className="size-1.5 rounded-full bg-good/70" />
           </span>
           <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-mute">
-            Collections · Decision Intelligence Layer
+            Illustrative · Decision Intelligence Layer
           </span>
         </div>
         <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase text-good">

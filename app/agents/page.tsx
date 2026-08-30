@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowUpRight,
-  Bot,
   CheckCircle2,
   FileCheck2,
   GitMerge,
@@ -434,12 +432,12 @@ function WorkedExamples() {
     >
       <Container>
         <div className="max-w-2xl">
-          <Eyebrow number="AG/05">Worked examples</Eyebrow>
+          <Eyebrow number="AG/05">Illustrative worked examples</Eyebrow>
           <h2 className="mt-6 font-display text-[40px] sm:text-[48px] leading-[1.05] tracking-[-0.02em] text-ink">
             Agents in the field.
           </h2>
           <p className="mt-6 text-[15px] leading-[1.65] text-ink-dim">
-            Three full agent cycles — from signal detection to outcome
+            Three illustrative agent cycles — from signal detection to outcome
             measurement — across NBFC, Sales, and Retail.
           </p>
         </div>

@@ -115,10 +115,10 @@ function Hero({ v }: { v: VerticalContent }) {
           <div className="card-elev rounded-xl p-5">
             <div className="flex items-center justify-between mb-4">
               <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-mute">
-                Sample outcome
+                Illustrative outcome
               </span>
-              <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase text-good">
-                <span className="size-1.5 rounded-full bg-good" /> Live pilot
+              <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase text-brand">
+                <span className="size-1.5 rounded-full bg-brand" /> Demo data
               </span>
             </div>
             <div className="grid grid-cols-3 gap-3">

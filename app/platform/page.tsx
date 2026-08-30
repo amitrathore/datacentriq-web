@@ -558,7 +558,7 @@ function CausalFactoryCard() {
         <div className="p-6 lg:p-8 bg-bg-elev/40 flex flex-col gap-3">
           <div className="rounded-lg border border-border bg-bg-card p-4">
             <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-mute">
-              Causal claim
+              Illustrative causal claim
             </div>
             <div className="mt-1 font-display text-[18px] leading-tight tracking-tight text-ink">
               Inventory cover → reduced stockout rate

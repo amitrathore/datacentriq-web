@@ -1,46 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  /* Light palette — warm off-white with editorial energy */
-  --bg: #fbfaf7;
-  --bg-elev: #f4f2ed;
+  --bg: #f3f2ef;
+  --bg-elev: #e7e6e1;
   --bg-card: #ffffff;
-  --surface: #eeece6;
-  --border: #e5e2d8;
-  --border-strong: #cbc7b8;
-  --ink: #14171f;
-  --ink-dim: #4b5364;
-  --ink-mute: #8a8f9c;
-  --brand: #2563eb;
-  --brand-strong: #1d4ed8;
-  --brand-deep: #1e3a8a;
-  --accent: #b8814a;
-  --accent-strong: #965f2c;
-  --good: #15a878;
-  --warn: #c08418;
-  --bad: #d23838;
+  --surface: #deddd7;
+  --border: rgba(19, 19, 17, 0.1);
+  --border-strong: rgba(19, 19, 17, 0.2);
+  --ink: #131311;
+  --ink-dim: #5a584f;
+  --ink-mute: #8a8880;
+  --brand: #2f6fb2;
+  --brand-strong: #245e99;
+  --brand-deep: #1e4d80;
+  --accent: #2f6fb2;
+  --accent-strong: #245e99;
+  --good: #4f7a52;
+  --warn: #a36f31;
+  --bad: #b5673f;
 }
 
-/* Dark scope — for embedded "product UI" surfaces that should
-   stay dark even on a light marketing page (TowerMock, etc.) */
 [data-theme="dark"] {
-  --bg: #06080d;
-  --bg-elev: #0b0f17;
-  --bg-card: #0e1320;
-  --surface: #131a2a;
-  --border: #1c2335;
-  --border-strong: #2a3245;
-  --ink: #e7ecf5;
-  --ink-dim: #a6b0c3;
-  --ink-mute: #6b7588;
-  --brand: #6aa3ff;
-  --brand-strong: #4d8bff;
-  --brand-deep: #1f4cb7;
-  --accent: #e9b27a;
-  --accent-strong: #d4965b;
-  --good: #6fd6a8;
-  --warn: #f1c27b;
-  --bad: #ef6f6f;
+  --bg: #131311;
+  --bg-elev: #1b1b18;
+  --bg-card: #20201c;
+  --surface: #282823;
+  --border: rgba(243, 242, 239, 0.1);
+  --border-strong: rgba(243, 242, 239, 0.24);
+  --ink: #f3f2ef;
+  --ink-dim: #b6b4ad;
+  --ink-mute: #77756d;
+  --brand: #8fb8dc;
+  --brand-strong: #b4cfe8;
+  --brand-deep: #2f6fb2;
+  --accent: #8fb8dc;
+  --accent-strong: #6e9fca;
+  --good: #8ab78c;
+  --warn: #d2a66f;
+  --bad: #d29a7e;
 }
 
 @theme inline {
@@ -61,9 +58,9 @@
   --color-good: var(--good);
   --color-warn: var(--warn);
   --color-bad: var(--bad);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
-  --font-mono: var(--font-jet), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 html,
@@ -72,9 +69,36 @@ body {
   color: var(--ink);
 }
 
+main > section:first-child {
+  --bg: #131311;
+  --bg-elev: #1b1b18;
+  --bg-card: #20201c;
+  --surface: #282823;
+  --border: rgba(243, 242, 239, 0.1);
+  --border-strong: rgba(243, 242, 239, 0.24);
+  --ink: #f3f2ef;
+  --ink-dim: #b6b4ad;
+  --ink-mute: #77756d;
+  --brand: #8fb8dc;
+  --brand-strong: #b4cfe8;
+  --brand-deep: #2f6fb2;
+  --accent: #8fb8dc;
+  --accent-strong: #6e9fca;
+  --good: #8ab78c;
+  --warn: #d2a66f;
+  --bad: #d29a7e;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+main > section:first-child .bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
 body {
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11", "cv03";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -86,8 +110,7 @@ body {
 
 .font-display {
   font-family: var(--font-display);
-  font-feature-settings: "ss01";
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
 
 .font-mono {
@@ -132,28 +155,15 @@ body {
   );
 }
 
-/* Editorial gradient text — brand-blue → warm → ink on light */
 .text-gradient-brand {
-  background: linear-gradient(
-    100deg,
-    var(--brand) 0%,
-    var(--accent-strong) 45%,
-    var(--brand-strong) 78%,
-    var(--ink) 100%
-  );
+  background: linear-gradient(100deg, var(--brand), var(--brand-strong));
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 [data-theme="dark"] .text-gradient-brand {
-  background: linear-gradient(
-    100deg,
-    #cfe0ff 0%,
-    #e7d6b9 35%,
-    #cfe0ff 75%,
-    #ffffff 100%
-  );
+  background: linear-gradient(100deg, #f3f2ef, #8fb8dc);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -202,26 +212,26 @@ body {
 
 /* Primary CTA — light: solid brand, white text, soft drop */
 .btn-primary {
-  background: var(--brand);
-  color: #ffffff;
-  border: 1px solid color-mix(in oklab, var(--brand) 88%, black);
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
     0 8px 22px -14px rgba(37, 99, 235, 0.55);
 }
 .btn-primary:hover {
-  background: var(--brand-strong);
+  background: var(--brand);
+  border-color: var(--brand);
 }
 [data-theme="dark"] .btn-primary {
-  background: linear-gradient(180deg, #7bb0ff, #4d8bff);
-  color: #07101f;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 8px 24px -12px rgba(77, 139, 255, 0.6);
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  box-shadow: none;
 }
 [data-theme="dark"] .btn-primary:hover {
-  filter: brightness(1.05);
+  background: var(--brand);
+  border-color: var(--brand);
 }
 
 .btn-secondary {
@@ -248,4 +258,49 @@ body {
     transparent 0 3px,
     rgba(255, 255, 255, 0.015) 3px 4px
   );
+}
+
+.dark-section {
+  background: #131311;
+  color: #f3f2ef;
+}
+
+.light-section {
+  background: #e7e6e1;
+  color: #131311;
+}
+
+.paper-section {
+  background: #f3f2ef;
+  color: #131311;
+}
+
+.dc-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.dc-grid-dark {
+  background-image:
+    linear-gradient(rgba(243, 242, 239, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 242, 239, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const jet = JetBrains_Mono({
-  variable: "--font-jet",
-  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -29,12 +24,12 @@ export const metadata: Metadata = {
     template: "%s · DatacentrIQ",
   },
   description:
-    "Move beyond dashboards. DatacentrIQ helps enterprises build governed Decision Intelligence Control Towers that explain what changed, reason causally, recommend decisions, track execution, and learn from outcomes.",
+    "DatacentrIQ turns enterprise data into measurable business outcomes through governed decision intelligence, control towers, and enterprise agents.",
   metadataBase: new URL("https://datacentriq.co"),
   openGraph: {
     title: "DatacentrIQ — The Enterprise Decision Intelligence Platform",
     description:
-      "From dashboards to decisions. A governed AI layer that turns enterprise data into Control Towers, causal intelligence, and executable workflows.",
+      "A governed decision intelligence platform that helps enterprises understand change, choose actions, execute workflows, and learn from outcomes.",
     type: "website",
   },
 };
@@ -45,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrument.variable} ${jet.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink">
         <SiteNav />

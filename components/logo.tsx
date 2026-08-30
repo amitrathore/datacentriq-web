@@ -8,14 +8,14 @@ type Props = {
 };
 
 export function Logo({ className, href = "/", size = "md" }: Props) {
-  const dim = size === "sm" ? 18 : 22;
-  const text = size === "sm" ? "text-[14px]" : "text-[15px]";
+  const dim = size === "sm" ? 24 : 34;
+  const text = size === "sm" ? "text-[16px]" : "text-[22px]";
 
   const inner = (
-    <span className={cn("inline-flex items-center gap-2.5 text-ink", className)}>
+    <span className={cn("inline-flex items-center gap-3 text-ink", className)}>
       <Mark size={dim} />
-      <span className={cn("font-display tracking-tight", text)}>
-        Datacentr<span className="text-brand">IQ</span>
+      <span className={cn("font-sans font-semibold tracking-[-0.035em]", text)}>
+        Datacentr<span className="font-bold">IQ</span>
       </span>
     </span>
   );
@@ -33,25 +33,18 @@ function Mark({ size = 22 }: { size?: number }) {
     <svg
       width={size}
       height={size}
-      viewBox="0 0 32 32"
+      viewBox="0 0 100 100"
       fill="none"
       aria-hidden
       className="shrink-0"
     >
-      <defs>
-        <linearGradient id="dciq-g" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="var(--brand)" />
-          <stop offset="1" stopColor="var(--brand-deep)" />
-        </linearGradient>
-      </defs>
-      <rect x="2" y="2" width="28" height="28" rx="7" stroke="url(#dciq-g)" strokeWidth="1.25" />
-      <path
-        d="M9 11h7a5 5 0 0 1 0 10H9V11Z"
-        stroke="url(#dciq-g)"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <circle cx="21.5" cy="20.5" r="2.25" fill="var(--accent-strong)" />
+      <rect x="20" y="21" width="13" height="57" fill="currentColor" />
+      <rect x="37" y="21" width="20" height="7" fill="currentColor" />
+      <rect x="37" y="31" width="30" height="7" fill="currentColor" />
+      <rect x="37" y="41" width="36" height="7" fill="currentColor" />
+      <rect x="37" y="51" width="36" height="7" fill="currentColor" />
+      <rect x="37" y="61" width="30" height="7" fill="currentColor" />
+      <rect x="37" y="71" width="20" height="7" fill="currentColor" />
     </svg>
   );
 }
