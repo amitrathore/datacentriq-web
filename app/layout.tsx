@@ -24,13 +24,23 @@ export const metadata: Metadata = {
     template: "%s · DatacentrIQ",
   },
   description:
-    "DatacentrIQ turns enterprise data into measurable business outcomes through governed decision intelligence, control towers, and enterprise agents.",
+    "Turn enterprise data into a living operating model. DatacentrIQ helps human and AI agents explain change, choose governed actions, and measure what works.",
+  applicationName: "DatacentrIQ",
   metadataBase: new URL("https://datacentriq.co"),
   openGraph: {
-    title: "DatacentrIQ — The Enterprise Decision Intelligence Platform",
+    title: "Turn enterprise data into decisions that learn.",
     description:
-      "A governed decision intelligence platform that helps enterprises understand change, choose actions, execute workflows, and learn from outcomes.",
+      "DatacentrIQ helps human and AI agents explain change, choose governed actions, execute safely, and measure what works.",
+    url: "/",
+    siteName: "DatacentrIQ",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turn enterprise data into decisions that learn.",
+    description:
+      "A governed decision intelligence platform for actions you can explain, control, and measure.",
   },
 };
 
