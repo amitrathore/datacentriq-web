@@ -294,6 +294,14 @@ body {
   outline-offset: 3px;
 }
 
+#site-intro {
+  display: none;
+}
+
+html[data-site-intro="show"] #site-intro {
+  display: flex;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

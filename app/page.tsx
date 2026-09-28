@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { AgentLoopMock } from "@/components/agent-loop-mock";
 import { Button } from "@/components/button";
+import { HomeIntro } from "@/components/home-intro";
 import { PlatformStory } from "@/components/platform-story";
 import {
   VerticalCarousel,
@@ -43,6 +44,7 @@ export default function HomePage() {
       <Outcomes />
       <Governance />
       <CallToAction />
+      <HomeIntro />
     </>
   );
 }
@@ -61,7 +63,7 @@ function Hero() {
             <span className="size-2 rounded-full bg-brand shadow-[0_0_0_6px_rgba(143,184,220,0.08)]" />
             Enterprise AI transformation · Decision intelligence
           </p>
-          <h1 className="mt-8 text-balance text-[42px] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-[62px] lg:text-[76px]">
+          <h1 tabIndex={-1} className="mt-8 text-balance text-[42px] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-[62px] lg:text-[76px]">
             Turn enterprise data into measurable business outcomes.
           </h1>
           <p className="mx-auto mt-7 max-w-[700px] text-[17px] leading-7 text-ink-dim sm:text-[20px] sm:leading-8">

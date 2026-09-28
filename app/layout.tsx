@@ -50,8 +50,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          id="site-intro-initializer"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var seen=false;try{seen=sessionStorage.getItem("datacentriq-intro-seen")==="1"}catch(e){}document.documentElement.dataset.siteIntro=!seen&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches?"show":"hide"})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-bg text-ink">
         <SiteNav />
         <main className="flex-1">{children}</main>
